@@ -1,0 +1,178 @@
+2016-08-28 16:03:16 [10101] [ERROR] Exception in worker process:
+Traceback (most recent call last):
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/psiturk/experiment.py", line 86, in <module>
+    init_db()
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/psiturk/db.py", line 32, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/schema.py", line 2848, in create_all
+    tables=tables)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1479, in _run_visitor
+    conn._run_visitor(visitorcallable, element, **kwargs)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1122, in _run_visitor
+    **kwargs).traverse_single(element)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 122, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/ddl.py", line 70, in visit_metadata
+    self.traverse_single(table, create_ok=True)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 122, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/ddl.py", line 89, in visit_table
+    self.connection.execute(schema.CreateTable(table))
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 662, in execute
+    params)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 720, in _execute_ddl
+    compiled
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 874, in _execute_context
+    context)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1024, in _handle_dbapi_exception
+    exc_info
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 196, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 867, in _execute_context
+    context)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 324, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (OperationalError) table turkdemo already exists u'\nCREATE TABLE turkdemo (\n\tuniqueid VARCHAR(128) NOT NULL, \n\tassignmentid VARCHAR(128) NOT NULL, \n\tworkerid VARCHAR(128) NOT NULL, \n\thitid VARCHAR(128) NOT NULL, \n\tipaddress VARCHAR(128), \n\tbrowser VARCHAR(128), \n\tplatform VARCHAR(128), \n\tlanguage VARCHAR(128), \n\tcond INTEGER, \n\tcounterbalance INTEGER, \n\tcodeversion VARCHAR(128), \n\tbeginhit DATETIME, \n\tbeginexp DATETIME, \n\tendhit DATETIME, \n\tbonus FLOAT, \n\tstatus INTEGER, \n\tdatastring TEXT(4294967295), \n\tPRIMARY KEY (uniqueid)\n)\n\n' ()
+Traceback (most recent call last):
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/psiturk/experiment.py", line 86, in <module>
+    init_db()
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/psiturk/db.py", line 32, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/schema.py", line 2848, in create_all
+    tables=tables)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1479, in _run_visitor
+    conn._run_visitor(visitorcallable, element, **kwargs)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1122, in _run_visitor
+    **kwargs).traverse_single(element)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 122, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/ddl.py", line 70, in visit_metadata
+    self.traverse_single(table, create_ok=True)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 122, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/ddl.py", line 89, in visit_table
+    self.connection.execute(schema.CreateTable(table))
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 662, in execute
+    params)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 720, in _execute_ddl
+    compiled
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 874, in _execute_context
+    context)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1024, in _handle_dbapi_exception
+    exc_info
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 196, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 867, in _execute_context
+    context)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 324, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (OperationalError) table turkdemo already exists u'\nCREATE TABLE turkdemo (\n\tuniqueid VARCHAR(128) NOT NULL, \n\tassignmentid VARCHAR(128) NOT NULL, \n\tworkerid VARCHAR(128) NOT NULL, \n\thitid VARCHAR(128) NOT NULL, \n\tipaddress VARCHAR(128), \n\tbrowser VARCHAR(128), \n\tplatform VARCHAR(128), \n\tlanguage VARCHAR(128), \n\tcond INTEGER, \n\tcounterbalance INTEGER, \n\tcodeversion VARCHAR(128), \n\tbeginhit DATETIME, \n\tbeginexp DATETIME, \n\tendhit DATETIME, \n\tbonus FLOAT, \n\tstatus INTEGER, \n\tdatastring TEXT(4294967295), \n\tPRIMARY KEY (uniqueid)\n)\n\n' ()
+2016-08-28 16:03:16,715 Exception in worker process:
+Traceback (most recent call last):
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/psiturk/experiment.py", line 86, in <module>
+    init_db()
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/psiturk/db.py", line 32, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/schema.py", line 2848, in create_all
+    tables=tables)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1479, in _run_visitor
+    conn._run_visitor(visitorcallable, element, **kwargs)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1122, in _run_visitor
+    **kwargs).traverse_single(element)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 122, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/ddl.py", line 70, in visit_metadata
+    self.traverse_single(table, create_ok=True)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 122, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/ddl.py", line 89, in visit_table
+    self.connection.execute(schema.CreateTable(table))
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 662, in execute
+    params)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 720, in _execute_ddl
+    compiled
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 874, in _execute_context
+    context)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1024, in _handle_dbapi_exception
+    exc_info
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 196, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 867, in _execute_context
+    context)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 324, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (OperationalError) table turkdemo already exists u'\nCREATE TABLE turkdemo (\n\tuniqueid VARCHAR(128) NOT NULL, \n\tassignmentid VARCHAR(128) NOT NULL, \n\tworkerid VARCHAR(128) NOT NULL, \n\thitid VARCHAR(128) NOT NULL, \n\tipaddress VARCHAR(128), \n\tbrowser VARCHAR(128), \n\tplatform VARCHAR(128), \n\tlanguage VARCHAR(128), \n\tcond INTEGER, \n\tcounterbalance INTEGER, \n\tcodeversion VARCHAR(128), \n\tbeginhit DATETIME, \n\tbeginexp DATETIME, \n\tendhit DATETIME, \n\tbonus FLOAT, \n\tstatus INTEGER, \n\tdatastring TEXT(4294967295), \n\tPRIMARY KEY (uniqueid)\n)\n\n' ()
+Traceback (most recent call last):
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/gunicorn/arbiter.py", line 495, in spawn_worker
+    worker.init_process()
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/gunicorn/workers/base.py", line 106, in init_process
+    self.wsgi = self.app.wsgi()
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/gunicorn/app/base.py", line 114, in wsgi
+    self.callable = self.load()
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/psiturk/experiment_server.py", line 49, in load
+    return util.import_app("psiturk.experiment:app")
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/gunicorn/util.py", line 354, in import_app
+    __import__(module)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/psiturk/experiment.py", line 86, in <module>
+    init_db()
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/psiturk/db.py", line 32, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/schema.py", line 2848, in create_all
+    tables=tables)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1479, in _run_visitor
+    conn._run_visitor(visitorcallable, element, **kwargs)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1122, in _run_visitor
+    **kwargs).traverse_single(element)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 122, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/ddl.py", line 70, in visit_metadata
+    self.traverse_single(table, create_ok=True)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/sql/visitors.py", line 122, in traverse_single
+    return meth(obj, **kw)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/ddl.py", line 89, in visit_table
+    self.connection.execute(schema.CreateTable(table))
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 662, in execute
+    params)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 720, in _execute_ddl
+    compiled
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 874, in _execute_context
+    context)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1024, in _handle_dbapi_exception
+    exc_info
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 196, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 867, in _execute_context
+    context)
+  File "/Users/markant/code/python_envs/psiturk-dev/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 324, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (OperationalError) table turkdemo already exists u'\nCREATE TABLE turkdemo (\n\tuniqueid VARCHAR(128) NOT NULL, \n\tassignmentid VARCHAR(128) NOT NULL, \n\tworkerid VARCHAR(128) NOT NULL, \n\thitid VARCHAR(128) NOT NULL, \n\tipaddress VARCHAR(128), \n\tbrowser VARCHAR(128), \n\tplatform VARCHAR(128), \n\tlanguage VARCHAR(128), \n\tcond INTEGER, \n\tcounterbalance INTEGER, \n\tcodeversion VARCHAR(128), \n\tbeginhit DATETIME, \n\tbeginexp DATETIME, \n\tendhit DATETIME, \n\tbonus FLOAT, \n\tstatus INTEGER, \n\tdatastring TEXT(4294967295), \n\tPRIMARY KEY (uniqueid)\n)\n\n' ()

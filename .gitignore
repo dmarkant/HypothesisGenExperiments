@@ -1,0 +1,3 @@
+*.pyc
+.psiturk_history
+participants.db

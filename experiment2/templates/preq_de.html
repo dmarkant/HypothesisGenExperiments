@@ -1,0 +1,73 @@
+<h1>Instructions</h1>
+<div id="container-instructions">
+
+	<div id=warning class="instruction-body">
+    Bitte beantworten Sie die untenstehenden Fragen, um sicherzustellen, 
+    dass Sie die Anleitung bis hierhin verstanden haben:
+    </div>
+    
+
+    <div id="questionnaire">
+
+        <div class="question">
+            <p class="questiontext">
+            Was ist das Ziel der <span class=learning>LERN</span>-Durchgänge?
+            </p>
+            <select id="learningphase" name="learningphase">
+                <option value="noresp" SELECTED></option>
+                <option value="0">Zu lernen, wie die verschiedenen Zusammensetzungen zu Erfolg oder Scheitern führen</option>
+                <option value="1">Zu lernen, wie die Menge von geernteten Nahrungsmitteln bei erfolgreichen Pflanzen variiert</option>
+                <option value="2">Für schnelle Entscheidungen belohnt zu werden</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <p class="questiontext">
+            Wie viele verschiedene Substanzen werden Sie jeweils anpassen können?
+            </p>
+            <select id="ncategories" name="ncategories">
+                <option value="noresp" SELECTED></option>
+                <option value="0">1</option>
+                <option value="1">2</option>
+                <option value="2">3</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <p class="questiontext">
+            Während der <span class=test>TEST</span>-Durchgänge wird Ihnen eine Zusammensetzung von Substanzen gezeigt. Sie müssen entscheiden:
+            </p>
+            <select id="testgoal" name="testgoal">
+                <option value="noresp" SELECTED></option>
+                <option value="0">Ob Sie dieselbe Zusammensetzung während der Lerndurchgänge ausprobiert haben</option>
+                <option value="1">Ob die Substanzen die gleiche Wirkung auf andere Sorten von Pflanzen haben, die Sie bisher nicht gesehen haben</option>
+                <option value="2">Ob die gezeigte Zusammensetzung zu Erfolg oder Scheitern führt</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <p class="questiontext">
+            Während der <span class=test>TEST</span>-Durchgänge werden Sie belohnt:
+            </p>
+            <select id="bonus" name="bonus">
+                <option value="noresp" SELECTED></option>
+                <option value="0">Wenn Sie vor Ablauf einer Frist antworten</option>
+                <option value="1">Jedes Mal wenn Sie Erfolg oder Scheitern richtig vorhersagen</option>
+                <option value="2">Für eine einzelne Vorhersage, die am Ende der Studie ausgewählt wird</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div id="container-prompt">
+        <div id="prompt"></div>
+        <a href="#" id=btn-continue class="btn btn-default btn-lg">Antworten einreichen</a>        
+        <a href="#" id=btn-startover class="btn btn-default btn-lg">Die Instruktionen noch einmal ansehen</a>
+    </div>
+</div>
+
+<div id="belowStage">
+    <div id="instruction"></div>
+    <div id="buttons"></div>
+</div>
+

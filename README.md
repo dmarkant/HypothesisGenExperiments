@@ -1,2 +1,4 @@
 # HypothesisGenExperiments
-Experiments on the effects of biased hypothesis generation on self-directed category learning
+Two experiments on the effects of biased hypothesis generation on self-directed category learning.
+
+For a preliminary report of the findings, see this [paper](http://dougmarkant.com/assets/Markant_CogSci2016.pdf).
